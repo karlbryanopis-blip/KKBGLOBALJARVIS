@@ -945,24 +945,94 @@ export default function App() {
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Platform Expertise */}
                 <div className="jarvis-panel p-6 rounded">
-                  <div className="font-mono-tech text-xs tracking-widest mb-4" style={{ color: 'rgba(0,212,255,0.5)' }}>PLATFORM.EXPERTISE</div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {['Zapier', 'n8n', 'Make.com', 'Go High Level', 'WordPress'].map(p => (
-                      <span key={p} className="px-3 py-1.5 rounded font-rajdhani text-sm" style={{ background: 'rgba(0,212,255,0.08)', border: '1px solid rgba(0,212,255,0.15)', color: 'rgba(224,244,255,0.6)' }}>{p}</span>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="font-mono-tech text-xs tracking-widest mb-5" style={{ color: 'rgba(0,212,255,0.5)' }}>PLATFORM.EXPERTISE</div>
+                  <div className="grid grid-cols-1 gap-3">
                     {[
-                      { label: 'Zapier Certified Expert', color: '#ff6b35' },
-                      { label: 'n8n Creator Partner', color: '#00d4ff' },
-                      { label: 'Make.com Gold Partner', color: '#00ff88' },
-                      { label: 'GHL Affiliate Partner', color: '#ffc800' },
-                      { label: 'WordPress VIP Agency', color: '#a855f7' },
-                      { label: 'ISO 27001', color: '#00d4ff' },
-                    ].map(cert => (
-                      <div key={cert.label} className="flex items-center gap-1.5 px-2 py-1 rounded" style={{ background: `${cert.color}08`, border: `1px solid ${cert.color}20` }}>
-                        <CheckCircle size={10} style={{ color: cert.color }} />
-                        <span className="font-mono-tech text-[10px]" style={{ color: cert.color }}>{cert.label}</span>
+                      {
+                        name: 'Zapier',
+                        badge: 'Certified Expert',
+                        color: '#ff4a00',
+                        bg: 'rgba(255,74,0,0.07)',
+                        border: 'rgba(255,74,0,0.2)',
+                        logo: (
+                          <svg viewBox="0 0 64 64" className="w-8 h-8" fill="none">
+                            <rect width="64" height="64" rx="12" fill="#FF4A00"/>
+                            <path d="M32 12L52 24V40L32 52L12 40V24L32 12Z" fill="none" stroke="white" strokeWidth="2.5"/>
+                            <path d="M22 32H42M32 22V42" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                            <circle cx="32" cy="32" r="4" fill="white"/>
+                          </svg>
+                        ),
+                      },
+                      {
+                        name: 'n8n',
+                        badge: 'Creator Partner',
+                        color: '#ea4b71',
+                        bg: 'rgba(234,75,113,0.07)',
+                        border: 'rgba(234,75,113,0.2)',
+                        logo: (
+                          <svg viewBox="0 0 64 64" className="w-8 h-8" fill="none">
+                            <rect width="64" height="64" rx="12" fill="#1a1a2e"/>
+                            <circle cx="16" cy="32" r="7" fill="#ea4b71"/>
+                            <circle cx="32" cy="32" r="7" fill="#ea4b71"/>
+                            <circle cx="48" cy="32" r="7" fill="#ea4b71"/>
+                            <line x1="23" y1="32" x2="25" y2="32" stroke="#ea4b71" strokeWidth="2"/>
+                            <line x1="39" y1="32" x2="41" y2="32" stroke="#ea4b71" strokeWidth="2"/>
+                          </svg>
+                        ),
+                      },
+                      {
+                        name: 'Make.com',
+                        badge: 'Gold Partner',
+                        color: '#6d00cc',
+                        bg: 'rgba(109,0,204,0.07)',
+                        border: 'rgba(109,0,204,0.25)',
+                        logo: (
+                          <svg viewBox="0 0 64 64" className="w-8 h-8" fill="none">
+                            <rect width="64" height="64" rx="12" fill="#6d00cc"/>
+                            <circle cx="20" cy="32" r="6" fill="white" fillOpacity="0.9"/>
+                            <circle cx="32" cy="32" r="6" fill="white" fillOpacity="0.9"/>
+                            <circle cx="44" cy="32" r="6" fill="white" fillOpacity="0.9"/>
+                            <path d="M26 32 Q29 24 32 32 Q35 40 38 32" stroke="white" strokeWidth="1.5" fill="none" strokeOpacity="0.5"/>
+                          </svg>
+                        ),
+                      },
+                      {
+                        name: 'Go High Level',
+                        badge: 'Affiliate Partner',
+                        color: '#00b4d8',
+                        bg: 'rgba(0,180,216,0.07)',
+                        border: 'rgba(0,180,216,0.2)',
+                        logo: (
+                          <svg viewBox="0 0 64 64" className="w-8 h-8" fill="none">
+                            <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
+                            <path d="M32 14C22.06 14 14 22.06 14 32C14 41.94 22.06 50 32 50C41.94 50 50 41.94 50 32H38C38 35.31 35.31 38 32 38C28.69 38 26 35.31 26 32C26 28.69 28.69 26 32 26C33.66 26 35.16 26.67 36.24 27.76L44.14 19.86C41.07 17.1 37.23 14 32 14Z" fill="#00b4d8"/>
+                          </svg>
+                        ),
+                      },
+                      {
+                        name: 'WordPress',
+                        badge: 'VIP Agency',
+                        color: '#21759b',
+                        bg: 'rgba(33,117,155,0.07)',
+                        border: 'rgba(33,117,155,0.2)',
+                        logo: (
+                          <svg viewBox="0 0 64 64" className="w-8 h-8" fill="none">
+                            <rect width="64" height="64" rx="12" fill="#21759b"/>
+                            <circle cx="32" cy="32" r="18" stroke="white" strokeWidth="2" fill="none"/>
+                            <path d="M14 32C14 32 20 28 24 32C28 36 32 28 36 32C40 36 44 28 50 32" stroke="white" strokeWidth="2" fill="none"/>
+                            <line x1="32" y1="14" x2="32" y2="50" stroke="white" strokeWidth="1.5" strokeOpacity="0.5"/>
+                          </svg>
+                        ),
+                      },
+                    ].map(p => (
+                      <div key={p.name} className="flex items-center gap-4 px-4 py-3 rounded-lg transition-all duration-200 hover:scale-[1.01]"
+                        style={{ background: p.bg, border: `1px solid ${p.border}` }}>
+                        <div className="flex-shrink-0">{p.logo}</div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-orbitron text-sm font-bold" style={{ color: '#e0f4ff' }}>{p.name}</div>
+                          <div className="font-mono-tech text-[10px] mt-0.5" style={{ color: p.color }}>{p.badge}</div>
+                        </div>
+                        <CheckCircle size={14} style={{ color: p.color, flexShrink: 0 }} />
                       </div>
                     ))}
                   </div>
