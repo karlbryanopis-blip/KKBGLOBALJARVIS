@@ -993,14 +993,9 @@ export default function App() {
                         color: '#00b4d8',
                         bg: 'rgba(0,180,216,0.07)',
                         border: 'rgba(0,180,216,0.2)',
-                        logoBg: '#0e1117',
-                        // GHL uses a stylized "G" with a circular arrow — brand color teal
+                        logoBg: 'transparent',
                         icon: (
-                          <svg viewBox="0 0 40 40" className="w-6 h-6" fill="none">
-                            <text x="50%" y="56%" dominantBaseline="middle" textAnchor="middle"
-                              fontFamily="Arial Black, sans-serif" fontWeight="900" fontSize="22"
-                              fill="#00b4d8">GHL</text>
-                          </svg>
+                          <img src="/download.png" alt="Go High Level" className="w-full h-full object-contain p-1" />
                         ),
                       },
                       {
@@ -1019,7 +1014,7 @@ export default function App() {
                     ].map(p => (
                       <div key={p.name} className="flex items-center gap-4 px-4 py-3 rounded-lg transition-all duration-200 hover:scale-[1.01]"
                         style={{ background: p.bg, border: `1px solid ${p.border}` }}>
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                        <div className={`flex-shrink-0 ${p.name === 'Go High Level' ? 'w-20 h-10' : 'w-10 h-10'} rounded-lg flex items-center justify-center overflow-hidden`}
                           style={{ background: p.logoBg }}>
                           {p.icon}
                         </div>
